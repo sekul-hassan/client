@@ -1,0 +1,27 @@
+name: Deploy to InfinityFree
+
+on:
+  push:
+    branches:
+      - main  # Change this to your repository's main branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to InfinityFree
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /htdocs  # Change this to the appropriate directory
+
+env:
+  FTP_SERVER: ftpupload.net
+  FTP_USERNAME: if0_34870853
+  FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}  # Create a repository secret for your FTP password
