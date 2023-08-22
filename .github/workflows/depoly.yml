@@ -22,12 +22,10 @@ jobs:
         run: npm install
 
       - name: Build React app
-        run: npm run build
+        run: npm run build-
 
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+      - name: Run React app
+        run: npm start
 
       - name: Deploy to InfinityFree
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
