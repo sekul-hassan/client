@@ -30,4 +30,4 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /sekul.rf.gd/htdocs/
+          server-dir: /snasu.rf.gd/htdocs/
