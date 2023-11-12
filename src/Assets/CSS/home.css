@@ -1,0 +1,70 @@
+.slideBack {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    min-height: 250px;
+    background: url("../Images/homeBack.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    min-height: 250px;
+    background: rgba(0, 0, 0, 0.4);
+    background-size: cover;
+    z-index: 1;
+}
+
+.slideDiv {
+    position: relative;
+    z-index: 2;
+    padding: 5%;
+}
+
+.slide {
+    width: 100%;
+    height: 420px;
+}
+.slideDiv input{
+    position: relative;
+    z-index: 4;
+    color: #18CFAB;
+    top: -200px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    border: 2px solid #18CFAB;
+    padding: 12px 20px 12px 20px;
+
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Raleway", serif;
+}
+
+.slideDiv input:hover{
+    transition: 0.2s;
+    color: white;
+    background-color: #18CFAB;
+}
+
+.modalImg{
+    width: 100%;
+    height: auto;
+}
+.blackTitle{
+    font-size: 25px;
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    color: rgba(0,0,0,0.8);
+    text-transform: uppercase;
+}
+.blueSubtitle{
+    font-size: 20px;
+    font-family: "Poppins", serif;
+    font-weight: 500;
+    color: #18CFAB;
+    text-transform: uppercase;
+}

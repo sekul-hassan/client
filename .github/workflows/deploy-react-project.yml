@@ -1,0 +1,29 @@
+name: Deploy React Project to cPanel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React project
+        run: npm run build
+
+      - name: Upload build artifacts to cPanel
+        uses: techdirect/cpanel-ssh-uploader@v2
+        with:
+          cpanel_url: ${{ secrets.CPANEL_URL }}
+          cpanel_username: ${{ secrets.CPANEL_USERNAME }}
+          cpanel_password: ${{ secrets.CPANEL_PASSWORD }}
+          destination_directory: '/public_html'
+          source_directory: 'build'
